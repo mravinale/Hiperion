@@ -1,0 +1,60 @@
+﻿<div data-role="page" id="home">
+	<div data-role="header">
+		<h1>Users</h1>
+		<a href="#" data-role="button" data-icon="add" class="ui-btn-right" data-bind="bindChangePage: '#addNew'">Add</a>
+	</div>
+
+	<div data-role="content">
+		<ul data-role="listview" data-bind="foreach: Users">
+			<li>
+				<a href="#" data-bind="{ text: Name, click: $parent.edit, bindChangePage: '#edit' }"></a>
+				<a href="#" data-bind="{  click: $parent.remove }"  data-icon="delete" data-theme="d"></a>
+			</li>
+		</ul>
+	</div>
+    <div data-role="footer" data-position="fixed">
+		<h3>Total Users: <span data-bind="text: totalUsers"></span></h3>
+	</div>
+</div>
+
+<div data-role="page" id="edit" data-bind="bindWith: selectedUser">
+	<div data-role="header">
+		<a href="#" data-rel="back" data-role="button" data-icon="back" data-theme="a">Back</a>
+		<h1 data-bind="text: Name"></h1>
+	</div>
+
+    <div data-role="content">
+        <div data-role="fieldcontain">
+            <div data-role="fieldcontain">
+                <label for="userid">Id:</label>
+                <input id="userid" disabled="disabled" data-bind="value: Id"/>
+            </div>
+            <div data-role="fieldcontain">
+                <label for="username">Name: </label>
+                <input id="username" data-bind="value: Name" />
+            </div>
+            <div data-role="fieldcontain">
+                <label for="address">Address:</label>
+                <input id="address" data-bind="value: Address"/>
+            </div>
+        </div>
+       <div class="ui-block-b"><a href="#" data-role="button" data-theme="b" data-rel="back" data-bind="{ click: $parent.update }">Aceptar</a></div>
+     </div>
+</div>
+
+<div data-role="dialog" id="addNew" data-bind="bindWith: newUser">
+	<div data-role="header">
+		<h1>Add User</h1>
+	</div>
+
+	<div data-role="content">
+		<label for="newusername">Name:</label>
+        <input type="text" name="newusername" data-bind="value: Name" />
+	
+		<fieldset class="ui-grid-a">
+			<div class="ui-block-a"><a href="#" data-rel="back" data-role="button" data-bind="click: clear">Cancelar</a></div>
+			<div class="ui-block-b"><a href="#" data-rel="back" data-role="button" data-theme="b" data-bind="click: add">Aceptar</a></div>
+		</fieldset>
+	</div>
+</div>
+
