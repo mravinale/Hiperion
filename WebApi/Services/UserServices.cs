@@ -11,7 +11,7 @@ namespace WebApi.Services
     using WebApi.Domain.Repositories;
     using WebApi.Models;
 
-    public class UserServices
+    public class UserServices : IUserServices
     {
         private readonly IUserRepository repository;
 

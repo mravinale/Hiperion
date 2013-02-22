@@ -10,9 +10,9 @@ namespace WebApi.Controllers
 
     public class UserController : ApiController
     {
-        private readonly UserServices userServices;
+        private readonly IUserServices userServices;
 
-        public UserController(UserServices userServices)
+        public UserController(IUserServices userServices)
         {
             this.userServices = userServices;
         }
@@ -27,14 +27,14 @@ namespace WebApi.Controllers
         public HttpResponseMessage Post(UserDto user)
         {
             userServices.SaveOrUpdateUser(user);
-            return Request.CreateResponse(HttpStatusCode.OK);
+            return Request.CreateResponse(HttpStatusCode.OK, user);
         }
 
         [HttpDelete]// DELETE api/values/5
         public HttpResponseMessage Delete(int id)
         {
             userServices.DeleteUser(id);
-            return Request.CreateResponse(HttpStatusCode.OK);
+            return Request.CreateResponse(HttpStatusCode.OK, id);
         }
     }
 }

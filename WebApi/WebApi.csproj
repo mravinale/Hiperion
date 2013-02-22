@@ -50,6 +50,9 @@
       <HintPath>..\packages\Castle.Windsor.3.1.0\lib\net40\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -151,6 +154,7 @@
     <Compile Include="Infrastructure\Ioc\WebWindsorInstaller.cs" />
     <Compile Include="Infrastructure\Ioc\WindsorDependencyResolver.cs" />
     <Compile Include="Infrastructure\Ioc\WindsorDependencyScope.cs" />
+    <Compile Include="Services\IUserServices.cs" />
     <Compile Include="Services\UserServices.cs" />
   </ItemGroup>
   <ItemGroup>
