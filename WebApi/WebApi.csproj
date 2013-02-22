@@ -144,15 +144,6 @@
     <Compile Include="Infrastructure\Automapper\AutomapperConfiguration.cs" />
     <Compile Include="Infrastructure\Automapper\IObjectMapperConfigurator.cs" />
     <Compile Include="Infrastructure\Mappings\UserMappers.cs" />
-    <Compile Include="Migrations\201302012111087_AddUser.cs" />
-    <Compile Include="Migrations\201302012111087_AddUser.Designer.cs">
-      <DependentUpon>201302012111087_AddUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201302022333390_addedProperty.cs" />
-    <Compile Include="Migrations\201302022333390_addedProperty.Designer.cs">
-      <DependentUpon>201302022333390_addedProperty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Domain\Repositories\UserRepository.cs" />
     <Compile Include="Domain\Repositories\IUserRepository.cs" />
     <Compile Include="Models\UserDto.cs" />
@@ -282,14 +273,6 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201302012111087_AddUser.resx">
-      <DependentUpon>201302012111087_AddUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201302022333390_addedProperty.resx">
-      <DependentUpon>201302022333390_addedProperty.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
