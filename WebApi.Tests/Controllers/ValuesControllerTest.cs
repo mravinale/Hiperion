@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using Moq;
-using Newtonsoft.Json;
 using NUnit.Framework;
 using WebApi.Controllers;
 using WebApi.Models;
 using WebApi.Services;
+using System.Net;
+ 
+using WebApi.Tests.Helpers;
 
 namespace WebApi.Tests.Controllers
 {
@@ -60,19 +61,18 @@ namespace WebApi.Tests.Controllers
             //Arrange
             var userServiceMock = new Mock<IUserServices>();
             userServiceMock.Setup(foo => foo.SaveOrUpdateUser(userList.ElementAt(0))).Returns(true);
-
-            var jsonSerializerSettings = new JsonSerializerSettings();
-            var jsonNetFormatter = new JsonNetFormatter(jsonSerializerSettings);
-
+            
             var controller = new UserController(userServiceMock.Object);
-            controller.SetupControllerForTests();
+            controller.SetupController<UserDto>();
           
             // Act
-            var result = controller.Post(userList.ElementAt(0));
-            var contentResult = result.Content.ReadAsAsync(typeof(UserDto), new[] { jsonNetFormatter }).Result as UserDto;
-            
+            var responseMessage = controller.Post(userList.ElementAt(0));
+             
             // Assert
-            Assert.IsNotNull(contentResult);
+            Assert.IsNotNull(responseMessage);
+            Assert.AreEqual(responseMessage.StatusCode, HttpStatusCode.OK);
+            Assert.AreEqual(responseMessage.GetContent<UserDto>().Name, userList.ElementAt(0).Name);
+
         }
     }
 }
