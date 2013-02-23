@@ -1,14 +1,14 @@
-﻿namespace WebApi
-{
-    using System.Linq;
-    using System.Data.Entity;
+﻿using System.Data.Entity;
 
-    using WebApi.Domain;
-    using WebApi.Infrastructure.EF;
+using WebApi.Domain;
+using WebApi.Infrastructure.EF;
+
+namespace WebApi
+{
 
     public class UserContext : DbContext, IDbContext
     {
-        public UserContext(){}
+        public UserContext(){ }
 
         public UserContext(string nameOrConnectionString) : base(nameOrConnectionString){}
         

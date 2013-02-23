@@ -44,15 +44,16 @@ namespace WebApi.Tests.Controllers
             userServiceMock.Setup(foo => foo.GetAllUsers()).Returns(userList);
 
             var controller = new UserController(userServiceMock.Object);
+			controller.SetupController<UserDto>();
 
             // Act
             var result = controller.Get();
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(2, result.Count());
-            Assert.AreEqual("Name1", result.ElementAt(0).Name);
-            Assert.AreEqual("Name2", result.ElementAt(1).Name);
+			Assert.AreEqual(2, result.GetContent<IEnumerable<UserDto>>().Count());
+			Assert.AreEqual("Name1", result.GetContent<IEnumerable<UserDto>>().ElementAt(0).Name);
+			Assert.AreEqual("Name2", result.GetContent<IEnumerable<UserDto>>().ElementAt(1).Name);
         }
 
         [Test]

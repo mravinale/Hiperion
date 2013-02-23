@@ -2,12 +2,13 @@
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebApi.Infrastructure.Attributes;
+using WebApi.Models;
+using WebApi.Services;
 
 namespace WebApi.Controllers
 {
-    using WebApi.Models;
-    using WebApi.Services;
-
+    [UnitOfWork]
     public class UserController : ApiController
     {
         private readonly IUserServices userServices;
@@ -18,9 +19,11 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]// GET api/values
-        public IEnumerable<UserDto> Get()
+		public HttpResponseMessage Get()
         {
-            return this.userServices.GetAllUsers();
+	        var users = userServices.GetAllUsers();
+			return users == null ? Request.CreateResponse(HttpStatusCode.NotFound) : 
+								   Request.CreateResponse(HttpStatusCode.OK, users);
         }
 
         [HttpPost]// POST api/values
@@ -33,8 +36,8 @@ namespace WebApi.Controllers
         [HttpDelete]// DELETE api/values/5
         public HttpResponseMessage Delete(int id)
         {
-            userServices.DeleteUser(id);
-            return Request.CreateResponse(HttpStatusCode.OK, id);
+            userServices.DeleteUser(id); 
+			return Request.CreateResponse(HttpStatusCode.NoContent);
         }
     }
 }
