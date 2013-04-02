@@ -18,7 +18,7 @@ namespace Hiperion.Controllers
             this.userServices = userServices;
         }
 
-        [HttpGet]// GET api/values
+		[HttpGet]// GET api/user
 		public HttpResponseMessage Get()
         {
 	        var users = userServices.GetAllUsers();
@@ -26,14 +26,14 @@ namespace Hiperion.Controllers
 								   Request.CreateResponse(HttpStatusCode.OK, users);
         }
 
-        [HttpPost]// POST api/values
+		[HttpPost]// POST api/user
         public HttpResponseMessage Post(UserDto user)
         {
             userServices.SaveOrUpdateUser(user);
             return Request.CreateResponse(HttpStatusCode.OK, user);
         }
 
-        [HttpDelete]// DELETE api/values/5
+        [HttpDelete]// DELETE api/user/5
         public HttpResponseMessage Delete(int id)
         {
             userServices.DeleteUser(id); 

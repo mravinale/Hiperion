@@ -1,4 +1,4 @@
-//http://Hiperionmobile.apphb.com/
+
 
 function UserViewModel(id, name, street) {
     this.Id = ko.observable(id);

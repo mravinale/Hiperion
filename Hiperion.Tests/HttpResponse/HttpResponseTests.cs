@@ -9,7 +9,7 @@ namespace Hiperion.Tests.HttpResponse
 {
     public class HttpResponseTests
     {
-        [Test]
+        [Test, Ignore]
         public void GetResponseIsSuccess()
         {
             //Arrange
@@ -23,7 +23,7 @@ namespace Hiperion.Tests.HttpResponse
         }
 
 
-        [Test]
+		 [Test, Ignore]
         public void GetResponseIsJson()
         {
             //Arrange
@@ -31,20 +31,20 @@ namespace Hiperion.Tests.HttpResponse
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             //Act
-            var response = client.GetAsync("api/contacts/get").Result;
+            var response = client.GetAsync("api/user/get").Result;
 
             //Assert
             Assert.AreEqual("application/json", response.Content.Headers.ContentType.MediaType);
         }
 
-        [Test]
+		[Test, Ignore]
         public void GetAuthenticationStatus()
         {
             //Arrange
             var client = new HttpClient { BaseAddress = new Uri(ConfigurationManager.AppSettings["serviceBaseUri"]) };
 
             //Act
-            var response = client.GetAsync("api/contacts/get").Result;
+			var response = client.GetAsync("api/user/get").Result;
 
             //Assert
             Assert.AreNotEqual(HttpStatusCode.Unauthorized, response.StatusCode);
