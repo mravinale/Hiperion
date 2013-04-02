@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiperion", "Hiperion\Hiperion.csproj", "{05FCFF9C-2445-4733-806E-719CDF531FDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiperion.Tests", "Hiperion.Tests\Hiperion.Tests.csproj", "{335403F8-5A73-4498-9579-7E01CB13756F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05FCFF9C-2445-4733-806E-719CDF531FDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05FCFF9C-2445-4733-806E-719CDF531FDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05FCFF9C-2445-4733-806E-719CDF531FDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05FCFF9C-2445-4733-806E-719CDF531FDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{335403F8-5A73-4498-9579-7E01CB13756F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{335403F8-5A73-4498-9579-7E01CB13756F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{335403F8-5A73-4498-9579-7E01CB13756F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{335403F8-5A73-4498-9579-7E01CB13756F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
