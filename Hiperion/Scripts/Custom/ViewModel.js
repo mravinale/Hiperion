@@ -45,9 +45,9 @@ function MainViewModel() {
     };
     
     self.remove = function () {
-        var user = this;
+        var user = this; 
 	    $.ajax({
-	        url: "/api/user/" + ko.mapping.toJSON(user.Id),
+	        url: "/api/user/" + ko.mapping.toJSON(user.Id()),
 	        type: 'DELETE',
 	        success:function() {
 	            self.Users.remove(user);
