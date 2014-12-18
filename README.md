@@ -4,16 +4,17 @@ Hiperion
 A simple mobile CRUD using a Single Page Application with Knockout
 
 ## Technologies
-* Server Side 
+* Server Side
     * Asp.Net Web Api
     * Entity Framework
     * Castle Windsor
     * Autommaper
     * Moq
     
-* Client side:
-  * Knockout 
-  * Jquery Mobile
+
+* Client side
+    * Knockout 
+    * Jquery Mobile
   
 
 ##Architecture
