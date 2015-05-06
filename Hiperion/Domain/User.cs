@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-
-namespace Hiperion.Domain
+﻿namespace Hiperion.Domain
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class User
     {
         public int Id { get; set; }

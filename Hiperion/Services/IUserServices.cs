@@ -2,7 +2,7 @@ namespace Hiperion.Services
 {
     using System.Collections.Generic;
 
-    using Hiperion.Models;
+    using Models;
 
     public interface IUserServices
     {

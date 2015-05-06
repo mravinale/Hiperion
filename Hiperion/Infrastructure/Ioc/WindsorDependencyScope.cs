@@ -10,28 +10,28 @@
 
     internal sealed class WindsorDependencyScope : IDependencyScope
     {
-        private readonly IWindsorContainer container;
-        private readonly IDisposable scope;
+        private readonly IWindsorContainer _container;
+        private readonly IDisposable _scope;
 
         public WindsorDependencyScope(IWindsorContainer container)
         {
-            this.container = container;
-            this.scope = container.BeginScope();
+            _container = container;
+            _scope = container.BeginScope();
         }
 
         public object GetService(Type t)
         {
-            return this.container.Kernel.HasComponent(t) ? this.container.Resolve(t) : null;
+            return _container.Kernel.HasComponent(t) ? _container.Resolve(t) : null;
         }
 
         public IEnumerable<object> GetServices(Type t)
         {
-            return this.container.ResolveAll(t).Cast<object>().ToArray();
+            return _container.ResolveAll(t).Cast<object>().ToArray();
         }
 
         public void Dispose()
         {
-            this.scope.Dispose();
+            _scope.Dispose();
         }
     }
 }

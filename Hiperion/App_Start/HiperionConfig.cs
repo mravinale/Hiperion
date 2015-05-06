@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
-
-namespace Hiperion
+﻿namespace Hiperion
 {
+    using System.Web.Http;
+
     public static class HiperionConfig
     {
         public static void Register(HttpConfiguration config)

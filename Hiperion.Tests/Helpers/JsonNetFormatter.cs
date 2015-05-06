@@ -1,4 +1,4 @@
-namespace Hiperion.Tests.Controllers
+namespace Hiperion.Tests.Helpers
 {
     using System;
     using System.IO;
@@ -7,20 +7,19 @@ namespace Hiperion.Tests.Controllers
     using System.Net.Http.Headers;
     using System.Text;
     using System.Threading.Tasks;
-
     using Newtonsoft.Json;
 
     public class JsonNetFormatter : MediaTypeFormatter
     {
         private readonly JsonSerializerSettings _settings;
-        private readonly Encoding encoding;
+        private readonly Encoding _encoding;
 
         public JsonNetFormatter(JsonSerializerSettings settings)
         {
-            this._settings = settings ?? new JsonSerializerSettings();
+            _settings = settings ?? new JsonSerializerSettings();
 
-            this.SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/json"));
-            this.encoding = new UTF8Encoding(false, true);
+            SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/json"));
+            _encoding = new UTF8Encoding(false, true);
         }
 
         public override bool CanReadType(Type type)
@@ -35,11 +34,11 @@ namespace Hiperion.Tests.Controllers
 
         protected Task<object> OnReadFromStreamAsync(Type type, Stream stream, HttpContentHeaders contentHeaders)
         {
-            var ser = JsonSerializer.Create(this._settings);
+            var ser = JsonSerializer.Create(_settings);
 
             return Task.Factory.StartNew(() =>
                 {
-                    using (var sr = new StreamReader(stream, this.encoding))
+                    using (var sr = new StreamReader(stream, _encoding))
                     using (var jsonReader = new JsonTextReader(sr))
                     {
                         var result = ser.Deserialize(jsonReader, type);
@@ -50,7 +49,7 @@ namespace Hiperion.Tests.Controllers
 
         protected Task OnWriteToStreamAsync(Type type, object value, Stream stream, HttpContentHeaders contentHeaders, TransportContext transportContext)
         {
-            var ser = JsonSerializer.Create(this._settings);
+            var ser = JsonSerializer.Create(_settings);
 
             return Task.Factory.StartNew(() =>
                 {

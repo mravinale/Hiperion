@@ -1,8 +1,7 @@
-﻿using System.Web;
-using System.Web.Optimization;
-
-namespace Hiperion
+﻿namespace Hiperion
 {
+    using System.Web.Optimization;
+
     public class BundleConfig
     {
         // Para obtener más información acerca de Bundling, consulte http://go.microsoft.com/fwlink/?LinkId=254725

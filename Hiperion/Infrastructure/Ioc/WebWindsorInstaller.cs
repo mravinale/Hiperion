@@ -1,15 +1,13 @@
-﻿using System.Configuration;
-using System.Web.Http.Controllers;
-using Castle.MicroKernel.Registration;
-using Castle.MicroKernel.SubSystems.Configuration;
-using Castle.Windsor;
-using Hiperion.Controllers;
-using System.Web.Http;
-using Hiperion.Infrastructure.Automapper;
-using Hiperion.Infrastructure.EF;
-
-namespace Hiperion.Infrastructure.Ioc
+﻿namespace Hiperion.Infrastructure.Ioc
 {
+    using System.Configuration;
+    using Castle.MicroKernel.Registration;
+    using Castle.MicroKernel.SubSystems.Configuration;
+    using Castle.Windsor;
+    using System.Web.Http;
+    using Automapper;
+    using EF;
+
     internal class WebWindsorInstaller : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)

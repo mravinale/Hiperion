@@ -9,26 +9,26 @@
 
     internal sealed class WindsorDependencyResolver : IDependencyResolver
     {
-        private readonly IWindsorContainer container;
+        private readonly IWindsorContainer _container;
 
         public WindsorDependencyResolver(IWindsorContainer container)
         {
-            this.container = container;
+            _container = container;
         }
 
         public object GetService(Type t)
         {
-            return this.container.Kernel.HasComponent(t)? this.container.Resolve(t) : null;
+            return _container.Kernel.HasComponent(t)? _container.Resolve(t) : null;
         }
 
         public IEnumerable<object> GetServices(Type t)
         {
-            return this.container.ResolveAll(t).Cast<object>().ToArray();
+            return _container.ResolveAll(t).Cast<object>().ToArray();
         }
 
         public IDependencyScope BeginScope()
         {
-            return new WindsorDependencyScope(this.container);
+            return new WindsorDependencyScope(_container);
         }
 
         public void Dispose(){}
