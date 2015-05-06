@@ -1,28 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Hiperion.Services
+﻿namespace Hiperion.Services
 {
+    using System.Collections.Generic;
+    using Repositories;
     using AutoMapper;
-
-    using Hiperion.Domain;
-    using Hiperion.Domain.Repositories;
-    using Hiperion.Models;
+    using Domain;
+    using Models;
 
     public class UserServices : IUserServices
     {
-        private readonly IUserRepository repository;
+        private readonly IUserRepository _repository;
 
         public UserServices(IUserRepository repository)
         {
-            this.repository = repository;
+            _repository = repository;
         }
 
         public IEnumerable<UserDto> GetAllUsers()
         {
-            var users = this.repository.GetAllValues();
+            var users = _repository.GetAllValues();
 
             //add some bussines logic before update DB
 
@@ -37,7 +32,7 @@ namespace Hiperion.Services
 
             //add some bussines logic before update DB
 
-            this.repository.SaveOrUpdateUser(user);
+            _repository.SaveOrUpdateUser(user);
 
             return true;
         }
@@ -46,9 +41,7 @@ namespace Hiperion.Services
         {
            //add some bussines logic before update DB
 
-            this.repository.DeleteUser(id);
+            _repository.DeleteUser(id);
         }
-
-
     }
 }

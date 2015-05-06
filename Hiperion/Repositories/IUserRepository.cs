@@ -1,8 +1,7 @@
-﻿namespace Hiperion.Domain.Repositories
+﻿namespace Hiperion.Repositories
 {
     using System.Collections.Generic;
-
-    using Hiperion.Domain;
+    using Domain;
 
     public interface IUserRepository
     {

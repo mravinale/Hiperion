@@ -148,8 +148,8 @@
     <Compile Include="Infrastructure\Automapper\AutomapperConfiguration.cs" />
     <Compile Include="Infrastructure\Automapper\IObjectMapperConfigurator.cs" />
     <Compile Include="Infrastructure\Mappings\UserMappers.cs" />
-    <Compile Include="Domain\Repositories\UserRepository.cs" />
-    <Compile Include="Domain\Repositories\IUserRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Models\UserDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\Ioc\WebWindsorInstaller.cs" />

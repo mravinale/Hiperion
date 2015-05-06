@@ -1,12 +1,12 @@
-﻿using System;
-using NUnit.Framework;
-using System.Net.Http;
-using System.Configuration;
-using System.Net;
-using System.Net.Http.Headers;
-
-namespace Hiperion.Tests.HttpResponse
+﻿namespace Hiperion.Tests.HttpResponse
 {
+    using System;
+    using NUnit.Framework;
+    using System.Net.Http;
+    using System.Configuration;
+    using System.Net;
+    using System.Net.Http.Headers;
+
     public class HttpResponseTests
     {
         [Test, Ignore]

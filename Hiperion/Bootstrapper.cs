@@ -1,9 +1,7 @@
-﻿using Castle.Windsor;
-
-namespace Hiperion
+﻿namespace Hiperion
 {
-    using Hiperion.Infrastructure;
-    using Hiperion.Infrastructure.Ioc;
+    using Castle.Windsor;
+    using Infrastructure.Ioc;
 
     public static class Bootstrapper
 	{

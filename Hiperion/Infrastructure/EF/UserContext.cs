@@ -1,10 +1,7 @@
-﻿using System.Data.Entity;
-
-using Hiperion.Domain;
-using Hiperion.Infrastructure.EF;
-
-namespace Hiperion
+﻿namespace Hiperion.Infrastructure.EF
 {
+    using System.Data.Entity;
+    using Domain;
 
     public class UserContext : DbContext, IDbContext
     {
@@ -18,7 +15,7 @@ namespace Hiperion
 
         public DbSet<T> Entity<T>() where T : class
         {
-            return this.Set<T>();
+            return Set<T>();
         }
     }
 }

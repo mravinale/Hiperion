@@ -1,16 +1,15 @@
-using System;
-using System.Net.Http;
-using System.Web.Http;
-using System.Web.Http.Controllers;
-using System.Web.Http.Hosting;
-using System.Web.Http.Routing;
-
-using Newtonsoft.Json;
-
-using Hiperion.Tests.Controllers;
-
 namespace Hiperion.Tests.Helpers
 {
+    using System;
+    using System.Net.Http;
+    using System.Web.Http;
+    using System.Web.Http.Controllers;
+    using System.Web.Http.Hosting;
+    using System.Web.Http.Routing;
+
+    using Newtonsoft.Json;
+
+    using Controllers;
     using System.Configuration;
 
     public static class ObjectExtensions

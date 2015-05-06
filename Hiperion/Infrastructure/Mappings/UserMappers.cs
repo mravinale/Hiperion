@@ -1,11 +1,11 @@
-﻿using AutoMapper;
-
-using Hiperion.Domain;
-using Hiperion.Infrastructure.Automapper;
-using Hiperion.Models;
-
-namespace Hiperion.Infrastructure.Mappings
+﻿namespace Hiperion.Infrastructure.Mappings
 {
+    using AutoMapper;
+
+    using Domain;
+    using Automapper;
+    using Models;
+
     public class UserMappers : IObjectMapperConfigurator
     {
         public void Apply()

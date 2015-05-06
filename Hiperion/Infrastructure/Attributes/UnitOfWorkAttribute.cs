@@ -1,15 +1,10 @@
-﻿
-
-using System;
-using System.Data.Entity;
-using System.Web.Http.Filters;
-using System.Web.Mvc;
-using Castle.Windsor;
-using Hiperion.Infrastructure.EF;
-using ActionFilterAttribute = System.Web.Http.Filters.ActionFilterAttribute;
-
-namespace Hiperion.Infrastructure.Attributes
+﻿namespace Hiperion.Infrastructure.Attributes
 {
+    using System;
+    using System.Web.Http.Filters;
+    using EF;
+    using ActionFilterAttribute = System.Web.Http.Filters.ActionFilterAttribute;
+
 	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
 	public class UnitOfWorkAttribute : ActionFilterAttribute
 	{ 

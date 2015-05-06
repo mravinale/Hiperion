@@ -1,13 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using Hiperion.Infrastructure.Attributes;
-using Hiperion.Models;
-using Hiperion.Services;
-
-namespace Hiperion.Controllers
+﻿namespace Hiperion.Controllers
 {
+    using System.Net;
+    using System.Net.Http;
+    using System.Web.Http;
+    using Infrastructure.Attributes;
+    using Models;
+    using Services;
+
     [UnitOfWork]
     public class UserController : ApiController
     {
