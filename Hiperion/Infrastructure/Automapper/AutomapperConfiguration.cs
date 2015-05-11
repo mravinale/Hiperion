@@ -4,15 +4,10 @@
     using System.Linq;
     using System.Reflection;
 
-    using AutoMapper;
-
     public static class AutomapperConfiguration
 	{
-		public static void Configure(Func<Type, object> serviceLocator = null)
+		public static void Configure()
 		{
-			if (serviceLocator != null)
-				Mapper.Configuration.ConstructServicesUsing(serviceLocator);
-
 			var configurators = Assembly.GetExecutingAssembly().GetTypes()
 				.Where(t => typeof(IObjectMapperConfigurator).IsAssignableFrom(t)
 							&& !t.IsAbstract

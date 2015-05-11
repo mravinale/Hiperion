@@ -7,18 +7,20 @@
     using System.Web.Optimization;
     using System.Web.Routing;
     using Castle.Windsor;
+    using Infrastructure.Automapper;
     using Infrastructure.EF;
 
     public class HiperionApplication : HttpApplication
     {
-        private static IWindsorContainer container;
+        private static IWindsorContainer _container;
 
-        public IWindsorContainer Container { get { return container; } }
+        public IWindsorContainer Container { get { return _container; } }
 
         protected void Application_Start()
         {
-            container = Bootstrapper.InitializeContainer();
+            _container = Bootstrapper.InitializeContainer();
 
+            AutomapperConfiguration.Configure();
             AreaRegistration.RegisterAllAreas();
 
             HiperionConfig.Register(GlobalConfiguration.Configuration);
@@ -31,7 +33,7 @@
 
         protected void Application_Stop()
         {
-            Bootstrapper.Release(container);
+            Bootstrapper.Release(_container);
         }
     }
 }

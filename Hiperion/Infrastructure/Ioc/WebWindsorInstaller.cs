@@ -29,7 +29,6 @@
                         .LifestyleTransient()
             );
 
-            AutomapperConfiguration.Configure(container.Resolve);
             GlobalConfiguration.Configuration.DependencyResolver = new WindsorDependencyResolver(container);
         }
     }
